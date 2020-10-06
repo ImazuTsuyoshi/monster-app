@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root 'homes#top'
 
+  resources :boards
+  resources :comments, only: %i[create destroy]
+
+
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
