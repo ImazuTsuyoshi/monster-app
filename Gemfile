@@ -31,6 +31,7 @@ gem 'kaminari'
 gem 'will_paginate' 
 gem 'bootstrap-will_paginate' 
 gem 'rails-i18n'
+gem 'geocoder'
 
 gem 'devise' 
 
