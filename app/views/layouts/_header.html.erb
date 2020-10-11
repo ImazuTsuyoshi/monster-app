@@ -10,7 +10,9 @@
         <%= header_link_item('ホーム', root_path) %>
       </li>
           <% if user_signed_in? %>
+            <%= link_to "Users", users_path %>
             <%= header_link_item('掲示板一覧', boards_path) %>
+            <%= link_to "プロフィール変更", edit_user_registration_path %>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> 
           <% else %>
             <%= link_to "新規登録", new_user_registration_path %><br>

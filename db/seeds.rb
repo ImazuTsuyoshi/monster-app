@@ -6,6 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.create!(name: "Sample User",
+  email: "sample@email.com",
+  password: "password",
+  password_confirmation: "password",
+  admin: true)
+
 Tag.create([
   { name: 'Ruby' },
   { name: 'Ruby on Rails4' },
