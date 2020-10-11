@@ -10,7 +10,12 @@ User.create!(name: "Sample User",
   email: "sample@email.com",
   password: "password",
   password_confirmation: "password",
-  admin: true)
+  admin: true,
+  uniform: "1",
+  position: "ピッチャー",
+  phone: "080-1111-2222",
+  history: "10年"
+  )
 
 Tag.create([
   { name: 'Ruby' },
