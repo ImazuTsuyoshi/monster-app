@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_09_131810) do
+ActiveRecord::Schema.define(version: 2020_10_10_125742) do
 
   create_table "board_tag_relations", force: :cascade do |t|
     t.integer "board_id", null: false
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_10_09_131810) do
     t.string "address"
     t.float "latitude"
     t.float "longitude"
+    t.string "image"
   end
 
   create_table "comments", force: :cascade do |t|
