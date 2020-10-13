@@ -7,6 +7,10 @@
     <thead>
       <tr>
         <th><%= User.human_attribute_name :name %></th>
+        <th>背番号</th>
+        <th>ポジション</th>
+        <th>電話番号</th>
+        <th>野球歴</th>
         <th></th>
       </tr>
     </thead>
@@ -14,8 +18,11 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.name %></td>
+        <td><%= user.uniform %></td>
+        <td><%= user.position %></td>
+        <td><%= user.phone %></td>
+        <td><%= user.history %></td>
         <td>
-            <%= link_to "基本情報編集", edit_basic_info_user_path(user), remote: true, class: "btn btn-success" %>
             <%= link_to "削除", user, method: :delete,
                 data: { confirm: "削除してよろしいですか？" }, class: "btn btn-danger" %>
         </td>
@@ -24,6 +31,3 @@
   </table>
   <%= will_paginate %>
 </div>
-
-<!--モーダルウインドウ表示-->
-<div id="edit-basic-info" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
