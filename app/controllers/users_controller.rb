@@ -1,20 +1,23 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update, :destroy, :edit_basic_info, :update_basic_info]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :edit_basic_info, :update_basic_info]
 
   def index
     @users = User.paginate(page: params[:page])
   end
 
+  def show
+  end
+
   def edit
   end
 
-  def update
-    if @user.update_attributes(user_params)
-      flash[:success] = "ユーザー情報を更新しました。"
-      redirect_to @user
+  def update_basic_info
+    if @user.update_attributes(basic_info_params)
+      flash[:success] = "#{@user.name}の基本情報を更新しました。"
     else
-      render :edit      
+      flash[:danger] = "#{@user.name}の更新は失敗しました。"
     end
+    redirect_to users_url
   end
 
   def destroy
@@ -31,10 +34,8 @@ class UsersController < ApplicationController
 
   private
 
-    # beforeフィルター
-
-    # paramsハッシュからユーザーを取得します。
-    def set_user
-      @user = User.find(params[:id])
+    def basic_info_params
+      params.require(:user).permit(:uniform, :position, :phone, :history)
     end
+
 end

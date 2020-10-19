@@ -1,5 +1,5 @@
 <% provide(:title, 'All Users') %>
-<h1>ユーザー一覧</h1>
+<h1>メンバー一覧</h1>
 
 <div class="col-md-10 col-md-offset-1">
   <%= will_paginate %>
@@ -7,10 +7,12 @@
     <thead>
       <tr>
         <th><%= User.human_attribute_name :name %></th>
-        <th>背番号</th>
-        <th>ポジション</th>
-        <th>電話番号</th>
-        <th>野球歴</th>
+        <th class="center"><%= User.human_attribute_name :phone %></th>
+        <th class="center"><%= User.human_attribute_name :address %></th>
+        <th class="center"><%= User.human_attribute_name :history %></th>
+        <th class="center"><%= User.human_attribute_name :uniform %></th>
+        <th class="center"><%= User.human_attribute_name :position %></th>
+        <th class="center"><%= User.human_attribute_name :self_introduction %></th>
         <th></th>
       </tr>
     </thead>
@@ -18,10 +20,59 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.name %></td>
-        <td><%= user.uniform %></td>
-        <td><%= user.position %></td>
-        <td><%= user.phone %></td>
-        <td><%= user.history %></td>
+        <th class="center"><%= user.phone %></th>
+        <th class="center">
+          <%= user.address %>
+          <div id="map"></div>
+
+
+<style>
+#map{
+  height: 150px;
+  width:270px;
+}
+</style>
+
+<script type="text/javascript">
+    function initMap() {
+
+        var test ={lat: <%= user.latitude %>, lng: <%= user.longitude %>};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: test
+        });
+        var transitLayer = new google.maps.TransitLayer();
+        transitLayer.setMap(map);
+
+        var contentString = '住所：<%= user.address %>';
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+
+        var marker = new google.maps.Marker({
+            position:test,
+            map: map,
+            title: contentString
+        });
+
+        marker.addListener('click', function() {
+            infowindow.open(map, marker);
+        });
+    }
+</script>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBfIQOnJ4LDiq_iJtQFZrVmqPOyfeVBF2o&callback=initMap">
+</script>
+  </div>
+</div>
+
+
+        </th>
+        <th class="center"><%= user.history %></th>
+        <th class="center"><%= user.uniform %></th>
+        <th class="center"><%= user.position %></th>
+        <th class="center"><%= user.self_introduction %></th>
         <td>
             <%= link_to "削除", user, method: :delete,
                 data: { confirm: "削除してよろしいですか？" }, class: "btn btn-danger" %>
@@ -31,3 +82,6 @@
   </table>
   <%= will_paginate %>
 </div>
+
+<!--モーダルウインドウ表示-->
+<div id="edit-basic-info" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>

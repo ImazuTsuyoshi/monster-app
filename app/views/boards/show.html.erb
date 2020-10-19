@@ -11,13 +11,6 @@
 
 <%= render @board %>
 
-<div class="p-comment__list">
-  <div class="p-comment__listTitle">コメント</div>
-  <%= render @board.comments %>
-</div>
-
-<%= render partial: 'comments/form', locals: { comment: @comment } %>
-
 <p>住所</p>
 <p><%= @board.address %></p>
 
@@ -60,5 +53,17 @@
 </script>
 
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyD7ELiFgJ6aIpZX1Ic9ApRUMb0qpHTUCp4&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBfIQOnJ4LDiq_iJtQFZrVmqPOyfeVBF2o&callback=initMap">
 </script>
+  </div>
+</div>
+
+
+
+<div class="p-comment__list">
+  <div class="p-comment__listTitle">コメント</div>
+  <%= render @board.comments %>
+</div>
+
+<%= render partial: 'comments/form', locals: { comment: @comment } %>
+

@@ -2,13 +2,22 @@ ja:
   activerecord:
     attributes:
       user:
-        name: ユーザー名
+        name: お名前
+        uniform: ご希望の背番号
+        position: ご希望のボジション
         password: パスワード
+        phone: 電話番号
+        history: 野球歴
+        address: 住所
+        self_introduction: 自己紹介
         password_confirmation: パスワード（確認）
+        remember_me: 次回から自動的にログイン
+        current_password: 現在のパスワード
       board:
         name: 名前
         title: タイトル
         body: 本文
+        image: 画像
       comment:
         name: 名前
         comment: コメント

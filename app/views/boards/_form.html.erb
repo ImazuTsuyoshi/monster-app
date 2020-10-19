@@ -15,10 +15,8 @@
   </div>
   <div class="form-group">
     <%= f.label :address, '住所' %>
-    <%= f.text_area :address, autofocus: true %>
+    <%= f.text_field :address, autofocus: true %>
   </div>
-  <%= f.label :image %>
-  <%= f.file_field :image %>
   <div class="form-group">
     <span>タグ</span>
     <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
