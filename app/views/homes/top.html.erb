@@ -1,6 +1,10 @@
 <div class="main top-main">
+  <div class="row">
 
-<p>2020年より活動している軟式草野球チームで、私はでキャプテンをしています。</p>
+    <div class="col-md-7"> 
+      <div class="center " id="top-main">
+        <h1 id="top-main-title">◯◯BaseballClub</h1>
+        <p>2020年より活動している軟式草野球チームで、私はでキャプテンをしています。</p>
 
 
 
@@ -150,4 +154,19 @@
 
 
 よろしくお願いします！！
+        <p>草野球メンバー募集中です!</p>
+        <p>↓↓応募フォームはこちらへ↓↓</p>
+        <p><%= link_to "応募フォーム", new_user_registration_path, class: "btn btn-lg btn-success" %></p>
+        <div style="margin-top: 10px;">
+        <% if user_signed_in? %>
+          <p>↓↓すでにメンバーの方はこちらへ!↓↓</p>
+          <%= link_to "ログイン", new_user_session_path, class: "btn btn-danger" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
 </div>
+
+
