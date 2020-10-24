@@ -18,10 +18,6 @@ User.create!(name: "Sample User",
   )
 
 Tag.create([
-  { name: 'Ruby' },
-  { name: 'Ruby on Rails4' },
-  { name: 'Ruby on Rails5' },
-  { name: 'Python2' },
-  { name: 'Python3' },
-  { name: 'Django2' }
+  { name: '日程' },
+  { name: 'お知らせ' }
 ])

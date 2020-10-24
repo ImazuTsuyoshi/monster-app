@@ -1,4 +1,5 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="profile">
+<h2>プロフィール変更</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
@@ -33,26 +34,22 @@
   </div>
 
   <div class="field">
-    <%= f.label :self_introduction %><br />
-    <%= f.text_field :self_introduction, autofocus: true, autocomplete: "name" %>
-  </div>
-
-  <div class="field">
     <%= f.label :position %><br />
     <%= f.text_field :position, autofocus: true, autocomplete: "name" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %> <i>(変更したくない場合は空白のままにします)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> 文字以上</em>
-    <% end %>
+    <%= f.label :self_introduction %><br />
+    <%= f.text_area :self_introduction, autofocus: true, autocomplete: "name" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password %> <i>(変更したくない場合は空白のままにします)</i><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %>{6文字以上}<br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
@@ -61,11 +58,12 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
-  <div class="actions">
+  <p><div class="actions">
     <%= f.submit "更新" %>
-  </div>
+  </div></p>
 <% end %>
 
 <p><%= button_to "アカウントをキャンセルする", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "戻る", :back %>
+</div>
