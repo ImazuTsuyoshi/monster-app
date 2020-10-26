@@ -1,11 +1,11 @@
 <%- if controller_name != 'sessions' %>
-  <p>↓↓ログインはこちらへ!↓↓</p>
+  <p>↓↓すでにメンバー、ログインはこちらへ!↓↓</p>
   <%= link_to "ログインへ", new_session_path(resource_name), class: "btn btn-danger" %><br />
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
   <p>↓↓応募フォームはこちらへ↓↓</p>
-  <%= link_to "応募フォームへ", new_registration_path(resource_name), class: "btn btn-lg btn-success" %><br />
+  <%= link_to "応募フォームへ", new_registration_path(resource_name), class: "btn btn-success" %><br />
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>

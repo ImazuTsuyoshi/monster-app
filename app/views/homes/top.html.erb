@@ -7,23 +7,23 @@
         <h3><p>草野球メンバー募集中です!</p></h3>
 <ul>
   <h5><li>①活動エリア</li></h5>
-  <p>●名古屋市内・刈谷市内のグラウンドで行なっています。</p>
+  <p>・名古屋市内・刈谷市内のグラウンドで行なっています。</p>
   <h5><li>&emsp;&emsp;②活動頻度・日時<br></h5>
-  ●第1・3 日曜日　9:00 〜 15:00 のグラウンドが取れた所<br>
-  ●第2・4 土曜日　19:00 〜 21:00 ナイター</li>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<br>
+  &emsp;・第1・3 日曜日　9:00 〜 15:00 のグラウンドが取れた所<br>
+  &emsp;・第2・4 土曜日　19:00 〜 21:00 ナイター</li>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<br>
 
   <br><li>
     <h5>&emsp;&emsp;&emsp;③募集条件について<br></h5>
-    ●年齢20〜30代の社会人&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<br>
-    ●野球経験・性別・国籍は不問です。&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<br>
-    &emsp;&emsp;●月4回の活動の半分ほどに、コンスタントに参加出来る方<br>
-    &emsp;●野球が好きな方、やってみたい方、上手くなりたい方<br>
+    &emsp;・年齢20〜30代の社会人&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<br>
+    &emsp;・野球経験・性別・国籍は不問です。&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<br>
+    &emsp;&emsp;&emsp;・月4回の活動の半分ほどに、コンスタントに参加出来る方<br>
+    &emsp;&emsp;・野球が好きな方、やってみたい方、上手くなりたい方<br>
     ↑これが一番大切です。笑
   </li><br>
 
   <li>
   <h5>④活動費・必要な物について<br></h5>
-  ●年会費はもらっていません。ズボンや靴下は<br>ユニフォームは自前でお願いしています。
+  ・年会費はもらっていません。ズボンや靴下は<br>ユニフォームは自前でお願いしています。
  </li> 
 
 </ul> 
@@ -38,7 +38,7 @@
         <% end %>
         <% if user_signed_in? %>
           <p>↓↓ログアウトはこちら!↓↓</p>
-          <%= link_to "ログアウト", destroy_user_session_path, class: "btn btn-danger" %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
         <% end %>
 
       </div>

@@ -28,42 +28,33 @@
     <%= f.text_field :history, autofocus: true, autocomplete: "name" %>
   </div>
 
-  <div class="field">
-    <%= f.label :uniform %><br />
-    <%= f.text_field :uniform, autofocus: true, autocomplete: "name" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :position %><br />
-    <%= f.text_field :position, autofocus: true, autocomplete: "name" %>
-  </div>
 
   <div class="field">
     <%= f.label :self_introduction %><br />
-    <%= f.text_area :self_introduction, autofocus: true, autocomplete: "name" %>
+    <%= f.text_area :self_introduction, autofocus: true, autocomplete: "name", rows: 5  %>
   </div>
 
   <div class="field">
-    <%= f.label :password %> <i>(変更したくない場合は空白のままにします)</i><br />
+    <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %>{6文字以上}<br />
+    <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(変更を確認するには、現在のパスワードが必要です)</i><br />
+    <%= f.label :current_password %><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
   <p><div class="actions">
-    <%= f.submit "更新" %>
+    <%= f.submit "更新", class: "btn btn-primary " %>
   </div></p>
 <% end %>
 
-<p><%= button_to "アカウントをキャンセルする", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p><%= button_to "アカウントをキャンセルする", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
 
 <%= link_to "戻る", :back %>
 </div>

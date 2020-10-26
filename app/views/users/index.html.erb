@@ -1,17 +1,23 @@
 <% provide(:title, 'All Users') %>
 <h1>メンバー一覧</h1>
 
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-12 col-md-offset-1">
   <%= will_paginate %>
   <table class="table table-condensed table-hover" id="table-users">
     <thead>
       <tr>
         <th><%= User.human_attribute_name :name %></th>
-        <th class="center"><%= User.human_attribute_name :phone %></th>
-        <th class="center"><%= User.human_attribute_name :address %></th>
+        <th class="center">
+        <% if current_user.admin? %>
+          <%= User.human_attribute_name :phone %>
+        <% end %>   
+        </th>
+        <th class="center">
+        <% if current_user.admin? %>
+          <%= User.human_attribute_name :address %>
+        <% end %>  
+        </th>
         <th class="center"><%= User.human_attribute_name :history %></th>
-        <th class="center"><%= User.human_attribute_name :uniform %></th>
-        <th class="center"><%= User.human_attribute_name :position %></th>
         <th class="center"><%= User.human_attribute_name :self_introduction %></th>
         <th></th>
       </tr>
@@ -20,8 +26,13 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.name %></td>
-        <th class="center"><%= user.phone %></th>
         <th class="center">
+        <% if current_user.admin? %>
+          <%= user.phone %>
+        <% end %>  
+        </th>
+        <th class="center">
+        <% if current_user.admin? %>
           <%= user.address %>
           <div id="map"></div>
 
@@ -69,14 +80,15 @@
 
 
         </th>
+        <% end %> 
         <th class="center"><%= user.history %></th>
-        <th class="center"><%= user.uniform %></th>
-        <th class="center"><%= user.position %></th>
-        <th class="center"><%= user.self_introduction %></th>
+        <th class="center"><%= simple_format(user.self_introduction) %></th>
         <td>
-            <%= link_to "削除", user, method: :delete,
+            <% if current_user.admin? %>
+              <%= link_to "削除", user, method: :delete,
                 data: { confirm: "削除してよろしいですか？" }, class: "btn btn-danger" %>
-        </td>
+            <% end %>    
+         </td>
       </tr>
     <% end %>
   </table>
