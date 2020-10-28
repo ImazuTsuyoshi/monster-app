@@ -1,3 +1,4 @@
+
 <div class="d-flex align-items-center">
   <h1>日程とお知らせ</h1>
   <div class="ml-auto boards__linkBox">
@@ -36,7 +37,7 @@
         <td><%= board.created_at.to_s(:datetime_jp) %></td>
         <td><%= board.updated_at.to_s(:datetime_jp) %></td>
         <td><%= link_to '詳細', board, class: 'btn btn-outline-dark' %></td>
-        <td><%= link_to '削除', board, class: 'btn btn-outline-dark', method: :delete %></td>
+        <td><%= link_to '削除', board, class: 'btn btn-outline-dark', method: :delete,  data: { confirm: '削除してよろしいですか？' } %></td>
       </tr>
     <% end %>
   </tbody>
