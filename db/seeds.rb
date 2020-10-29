@@ -18,6 +18,8 @@ User.create!(name: "Sample User",
   )
 
 Tag.create([
-  { name: '日程' },
+  { name: '練習の日程' },
+  { name: '練習試合の日程' },
+  { name: '大会試合の日程' },
   { name: 'お知らせ' }
 ])
