@@ -13,8 +13,10 @@ User.create!(name: "Sample User",
   admin: true,
   uniform: "1",
   position: "ピッチャー",
-  phone: "080-1111-2222",
-  history: "10年"
+  phone: "08011112222",
+  history: "10年",
+  address: "愛知県名古屋市港区名港1-11-19",
+  self_introduction: "よろしくお願いします"
   )
 
 Tag.create([

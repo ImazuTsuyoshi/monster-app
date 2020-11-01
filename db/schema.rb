@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_16_051623) do
+ActiveRecord::Schema.define(version: 2020_11_01_035724) do
 
   create_table "board_tag_relations", force: :cascade do |t|
     t.integer "board_id", null: false
@@ -66,6 +66,11 @@ ActiveRecord::Schema.define(version: 2020_10_16_051623) do
     t.float "latitude"
     t.float "longitude"
     t.string "self_introduction"
+    t.integer "postcode"
+    t.integer "prefecture_code"
+    t.string "address_city"
+    t.string "address_street"
+    t.string "address_building"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

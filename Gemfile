@@ -34,11 +34,15 @@ gem 'rails-i18n'
 gem 'geocoder'
 gem 'carrierwave'
 gem 'mini_magick' #画像に対して処理を行う場合
+gem 'jp_prefecture' #住所取得用
+gem 'jquery-rails' #jquery起動用
+gem "dotenv-rails"
 
 
 gem 'devise' 
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+
 
 
 
