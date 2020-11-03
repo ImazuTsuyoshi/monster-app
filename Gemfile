@@ -42,12 +42,14 @@ gem "dotenv-rails"
 gem 'devise' 
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'uglifier'
 
 
 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'sqlite3', '~> 1.4'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rails-flog', require: 'flog'
 end
