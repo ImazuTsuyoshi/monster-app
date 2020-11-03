@@ -5,7 +5,7 @@
 <div class="col-md-12 col-md-offset-1">
   <%= will_paginate %>
   <table class="table table-condensed table-hover" id="table-users">
-    <thead>
+    <thead >
       <tr>
         <th><%= User.human_attribute_name :name %></th>
         <th class="center">
@@ -27,18 +27,18 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.name %></td>
-        <th class="center">
+        <td>
         <% if current_user.admin? %>
           <%= user.phone %>
         <% end %>  
-        </th>
-        <th class="center">
+        </td>
+        <td>
         <% if current_user.admin? %>
           <%= user.address %>
         <% end %>   
-        </th>
-        <th class="center"><%= user.history %></th>
-        <th class="center"><%= user.self_introduction %></th>
+        </td>
+        <td><%= user.history %></td>
+       <td><%= user.self_introduction %></td>
         <td>
           <% if current_user.admin? %>
             <%= link_to 'MAP表示', user, class: "btn btn-primary " %>

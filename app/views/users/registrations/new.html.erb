@@ -1,11 +1,14 @@
 <div class="sessions_new">
 <h2>応募フォーム</h2>※全て入力必須でお願いいたします。
+&emsp;&emsp;&emsp;&emsp;<br>※電話番号は-(ハイフン)無しでお願いします。
+<br>※住所はお間違いなくお願いします&emsp;&emsp;&emsp;&emsp;&emsp;
+<br>※ご希望のポシション、背番号がある人は遠慮なく自己紹介欄にお書き下さい。
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <br><%= f.label :name %><br />
     <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "お名前入力" %>
   </div>
 
@@ -15,12 +18,12 @@
   </div>
 
   <div class="field">
-    <%= f.label :phone %><br />(-は無しでお願いします。)<br />
+    <%= f.label :phone %><br />
     <%= f.text_field :phone, autofocus: true, autocomplete: "name", placeholder: "電話番号入力" %>
   </div>
 
   <div class="field">
-    <%= f.label :address %><br />(お間違いなくお願いします。)<br />
+    <%= f.label :address %><br />
     <%= f.text_field :address, autofocus: true, autocomplete: "name", placeholder: "住所入力"  %>
   </div>
 
