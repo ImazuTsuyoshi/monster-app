@@ -1,10 +1,13 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:destroy]
+  before_action :set_user, only: [:show, :destroy]
   before_action :authenticate_user!, only: [ :index, :destroy]
   before_action :admin_user, only: [:destroy]
 
   def index
     @users = User.paginate(page: params[:page])
+  end
+
+  def show
   end
 
   def destroy
@@ -14,10 +17,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-    def basic_info_params
-      params.require(:user).permit(:uniform, :position, :phone, :history)
-    end
 
     def zipedit
       params.require(:user).permit(:postcode, :prefecture_name, :address_city, :address_street, :address_building)

@@ -1,37 +1,37 @@
 <div class="sessions_new">
-<h2>応募フォーム</h2>
+<h2>応募フォーム</h2>※全て入力必須でお願いいたします。
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "お名前入力" %>
   </div>
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" , placeholder: "メールアドレス入力" %>
   </div>
 
   <div class="field">
     <%= f.label :phone %><br />(-は無しでお願いします。)<br />
-    <%= f.text_field :phone, autofocus: true, autocomplete: "name" %>
+    <%= f.text_field :phone, autofocus: true, autocomplete: "name", placeholder: "電話番号入力" %>
   </div>
 
   <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address, autofocus: true, autocomplete: "name" %>
+    <%= f.label :address %><br />(お間違いなくお願いします。)<br />
+    <%= f.text_field :address, autofocus: true, autocomplete: "name", placeholder: "住所入力"  %>
   </div>
 
   <div class="field">
     <%= f.label :history %><br />
-    <%= f.text_field :history, autofocus: true, autocomplete: "name" %>
+    <%= f.text_field :history, autofocus: true, autocomplete: "name", placeholder: "野球歴入力" %>
   </div>
 
   <div class="field">
     <%= f.label :self_introduction %><br>(ご希望のポシション、背番号がある人は遠慮なくお書き下さい。↓)<br />
-    <%= f.text_area :self_introduction, autofocus: true, autocomplete: "name" , rows: 5 %>
+    <%= f.text_area :self_introduction, autofocus: true, autocomplete: "name" , rows: 5, placeholder: "自己紹介入力"  %>
   </div>
 
   <div class="field">
@@ -39,12 +39,12 @@
     <% if @minimum_password_length %>
     <em></em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード入力" %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード確認入力" %>
   </div>
 
   <p><div class="actions">

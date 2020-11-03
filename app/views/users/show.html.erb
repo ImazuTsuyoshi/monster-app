@@ -1,23 +1,42 @@
-<% provide(:title, "Edit") %>
-<h1>ユーザー情報の更新</h1>
+<p><%= @user.address %></p>
+<div id="map"></div>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_with(model: @user, local: true) do |f| %>
 
-      <%= f.label :name, class: "label-user--edit" %>
-      <%= f.text_field :name, class: "form-control" %>
+<style>
+#map{
+  height: 150px;
+  width:270px;
+}
+</style>
 
-      <%= f.label :email, class: "label-user--edit" %>
-      <%= f.email_field :email, class: "form-control" %>
+<script type="text/javascript">
+    function initMap() {
 
-      <%= f.label :password, class: "label-user--edit" %>
-      <%= f.password_field :password, class: "form-control" %>
+        var test ={lat: <%= @user.latitude %>, lng: <%= @user.longitude %>};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: test
+        });
+        var transitLayer = new google.maps.TransitLayer();
+        transitLayer.setMap(map);
 
-      <%= f.label :password_confirmation, "Confirmation", class: "label-user--edit" %>
-      <%= f.password_field :password_confirmation, class: "form-control" %>
+        var contentString = '住所：<%= @user.address %>';
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
 
-      <%= f.submit "更新", class: "btn btn-primary btn-block btn-user--edit" %>
-    <% end %>
-  </div>
-</div>
+        var marker = new google.maps.Marker({
+            position:test,
+            map: map,
+            title: contentString
+        });
+
+        marker.addListener('click', function() {
+            infowindow.open(map, marker);
+        });
+    }
+</script>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
+</script>

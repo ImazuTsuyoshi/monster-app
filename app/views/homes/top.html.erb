@@ -15,9 +15,7 @@
 
   <br><li>
     <h5>&emsp;&emsp;&emsp;③募集条件について<br></h5>
-    &emsp;・年齢20〜30代の社会人&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<br>
     &emsp;・野球経験・性別・国籍は不問です。&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<br>
-    &emsp;&emsp;&emsp;・月4回の活動の半分ほどに、コンスタントに参加出来る方<br>
     &emsp;&emsp;・野球が好きな方、やってみたい方、上手くなりたい方<br>
     ↑これが一番大切です。笑
   </li><br>
@@ -27,11 +25,16 @@
   ・年会費はもらっていません。ズボンや靴下は<br>ユニフォームは自前でお願いしています。
  </li> 
 
+ <br><li>
+  <h5>＜お問い合わせについて＞<br></h5>
+  ・電話番号: 09011112222<br>&emsp;&emsp;&emsp;&emsp;&emsp;・メールアドレス:sample@email.com<br>&emsp;&emsp;↑こちらまでお願いします。↑
+ </li> 
+
 </ul> 
         <p>基本的にこのスケジュールで活動しています</p> 
         <% unless user_signed_in? %>
           <p>↓↓応募フォームはこちらへ↓↓</p>
-          <p><%= link_to "応募フォーム", new_user_registration_path, class: "btn btn-lg btn-success" %></p>
+          <p><%= link_to "応募フォーム", new_user_registration_path, class: "btn  btn-success" %></p>
           <div style="margin-top: 10px;">
             <p>↓↓すでにメンバーの方はこちらへ!↓↓</p>
             <%= link_to "ログイン", new_user_session_path, class: "btn btn-danger" %>

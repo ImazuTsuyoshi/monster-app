@@ -33,56 +33,13 @@
       <tr>
         <td><%= board.title %></td>
         <td><%= board.name %></td>
-        <td><%= board.address %>
-        <div id="map"></div>
-
-
-<style>
-#map{
-  height: 150px;
-  width:270px;
-}
-</style>
-
-<script type="text/javascript">
-    function initMap() {
-
-        var test ={lat: <%= board.latitude %>, lng: <%= board.longitude %>};
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: test
-        });
-        var transitLayer = new google.maps.TransitLayer();
-        transitLayer.setMap(map);
-
-        var contentString = '住所：<%= board.address %>';
-        var infowindow = new google.maps.InfoWindow({
-            content: contentString
-        });
-
-        var marker = new google.maps.Marker({
-            position:test,
-            map: map,
-            title: contentString
-        });
-
-        marker.addListener('click', function() {
-            infowindow.open(map, marker);
-        });
-    }
-</script>
-
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
-</script>
-</td>
-
+        <td><%= board.address %></td>
         <td><%= board.created_at.to_s(:datetime_jp) %></td>
         <td><%= board.updated_at.to_s(:datetime_jp) %></td>
-        <td><%= link_to '詳細', board, class: 'btn btn-outline-dark' %></td>
+        <td><%= link_to '詳細', board, class: "btn btn-primary " %></td>
         <td>
           <% if current_user.admin? %>
-            <%= link_to '削除', board, class: 'btn btn-outline-dark', method: :delete,  data: { confirm: '削除してよろしいですか？' } %>
+            <%= link_to '削除', board, class: 'btn btn-outline-dark', method: :delete,  data: { confirm: '削除してよろしいですか？' }, class: "btn btn-danger" %>
           <% end %>  
         </td>
       </tr>

@@ -1,6 +1,7 @@
 <% provide(:title, 'All Users') %>
 <h1>メンバー一覧</h1>
 
+
 <div class="col-md-12 col-md-offset-1">
   <%= will_paginate %>
   <table class="table table-condensed table-hover" id="table-users">
@@ -34,54 +35,15 @@
         <th class="center">
         <% if current_user.admin? %>
           <%= user.address %>
-          <div id="map"></div>
-
-
-<style>
-#map{
-  height: 150px;
-  width:270px;
-}
-</style>
-
-<script type="text/javascript">
-    function initMap() {
-
-        var test ={lat: <%= user.latitude %>, lng: <%= user.longitude %>};
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: test
-        });
-        var transitLayer = new google.maps.TransitLayer();
-        transitLayer.setMap(map);
-
-        var contentString = '住所：<%= user.address %>';
-        var infowindow = new google.maps.InfoWindow({
-            content: contentString
-        });
-
-        var marker = new google.maps.Marker({
-            position:test,
-            map: map,
-            title: contentString
-        });
-
-        marker.addListener('click', function() {
-            infowindow.open(map, marker);
-        });
-    }
-</script>
-
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
-</script>
-
-
-
+        <% end %>   
         </th>
-        <% end %> 
         <th class="center"><%= user.history %></th>
-        <th class="center"><%= simple_format(user.self_introduction) %></th>
+        <th class="center"><%= user.self_introduction %></th>
+        <td>
+          <% if current_user.admin? %>
+            <%= link_to 'MAP表示', user, class: "btn btn-primary " %>
+          <% end %>  
+        </td>
         <td>
             <% if current_user.admin? %>
               <%= link_to "削除", user, method: :delete,
@@ -95,4 +57,4 @@
 </div>
 
 <!--モーダルウインドウ表示-->
-<div id="edit-basic-info" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+<div id="edit-post" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
