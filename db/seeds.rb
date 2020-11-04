@@ -18,7 +18,7 @@ User.create!(name: "今津剛",
   )
 
   User.create!(name: "sampleuser",
-    email: "tsuyoshiA@email.com",
+    email: "tsuyoshia@email.com",
     password: "password",
     password_confirmation: "password",
     phone: "08011112222",
