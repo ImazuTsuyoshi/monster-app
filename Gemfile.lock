@@ -104,7 +104,6 @@ GEM
       dotenv (= 2.7.6)
       railties (>= 3.2)
     erubi (1.9.0)
-    execjs (2.7.0)
     ffi (1.13.1)
     geocoder (1.6.4)
     globalid (0.4.2)
@@ -246,8 +245,6 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
-    uglifier (4.2.0)
-      execjs (>= 0.3.0, < 3)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.0.4)
@@ -302,10 +299,9 @@ DEPENDENCIES
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3
+  sqlite3 (~> 1.4)
   turbolinks (~> 5)
   tzinfo-data
-  uglifier
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)
