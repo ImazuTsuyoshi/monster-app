@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create!(name: "今津剛",
-  email: "sample@email.com",
+  email: "tsuyoshi@email.com",
   password: "password",
   password_confirmation: "password",
   admin: true,
@@ -18,7 +18,7 @@ User.create!(name: "今津剛",
   )
 
   User.create!(name: "sampleuser",
-    email: "sample1@email.com",
+    email: "tsuyoshiA@email.com",
     password: "password",
     password_confirmation: "password",
     phone: "08011112222",
