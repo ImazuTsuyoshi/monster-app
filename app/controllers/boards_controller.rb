@@ -14,7 +14,7 @@ class BoardsController < ApplicationController
   def create
     board = Board.new(board_params)
     if board.save
-      flash[:notice] = "「#{board.title}」の掲示板を作成しました"
+      flash[:notice] = "「#{board.title}」を作成しました"
       redirect_to board
     else
       redirect_to new_board_url, flash: {
@@ -45,7 +45,7 @@ class BoardsController < ApplicationController
 
   def destroy
     @board.destroy
-    redirect_to boards_path, flash: { notice: "「#{@board.title}」の掲示板が削除されました" }
+    redirect_to boards_path, flash: { notice: "「#{@board.title}」が削除されました" }
   end
 
   private
