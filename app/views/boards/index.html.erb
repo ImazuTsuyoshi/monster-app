@@ -13,6 +13,7 @@
       %>
     <% end %>
     <a href="/boards/new" class="btn btn-outline-dark">新規作成</a>
+    <%= link_to '地図検索', current_user, class: "btn btn-outline-dark" %><br>※地図検索は練習場所、試合場所が分からない時にお使いください。
   </div>
 </div>
 
@@ -21,7 +22,6 @@
     <tr>
       <th>タイトル</th>
       <th>作成者</th>
-      <th>住所</th>
       <th>作成日時</th>
       <th>更新日時</th>
       <th></th>
@@ -33,7 +33,6 @@
       <tr>
         <td><%= board.title %></td>
         <td><%= board.name %></td>
-        <td><%= board.address %></td>
         <td><%= board.created_at.to_s(:datetime_jp) %></td>
         <td><%= board.updated_at.to_s(:datetime_jp) %></td>
         <td><%= link_to '詳細', board, class: "btn btn-primary " %></td>
