@@ -1,9 +1,6 @@
 <% provide(:title, 'All Users') %>
-<h1>メンバー一覧</h1>
+<h1>メンバー紹介</h1>
 <div class=" align-items-center">
-<% if current_user.admin? %>
-  <%= link_to 'メンバーの住所MAP検索', current_user, class: "btn btn-primary " %>
-<% end %> 
 </div>
 
 
@@ -13,16 +10,6 @@
     <thead >
       <tr>
         <th><%= User.human_attribute_name :name %></th>
-        <th class="center">
-        <% if current_user.admin? %>
-          <%= User.human_attribute_name :phone %>
-        <% end %>   
-        </th>
-        <th class="center">
-        <% if current_user.admin? %>
-          <%= User.human_attribute_name :address %>
-        <% end %>  
-        </th>
         <th class="center"><%= User.human_attribute_name :history %></th>
         <th class="center"><%= User.human_attribute_name :self_introduction %></th>
         <th></th>
@@ -32,23 +19,13 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.name %></td>
-        <td>
-        <% if current_user.admin? %>
-          <%= user.phone %>
-        <% end %>  
-        </td>
-        <td>
-        <% if current_user.admin? %>
-          <%= user.address %>
-        <% end %>   
-        </td>
         <td><%= user.history %></td>
        <td><%= user.self_introduction %></td>
         <td>
-            <% if current_user.admin? %>
+          <% if current_user.admin? %>
               <%= link_to "削除", user, method: :delete,
-                data: { confirm: "削除してよろしいですか？" }, class: "btn btn-danger" %>
-            <% end %>    
+                data: { confirm: "削除してよろしいですか？" }, class: "btn btn-danger" %>  
+          <% end %>        
          </td>
       </tr>
     <% end %>

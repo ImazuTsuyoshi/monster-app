@@ -1,0 +1,68 @@
+<div class="col-md-12"> 
+      <div class="center " id="top-main">
+        <ul>
+        <li>管理者名:　今津剛</li>&emsp;&emsp;&emsp;&emsp;
+        <li>電話番号:　09011112222</li>&emsp;&emsp;
+        <li>住所: 愛知県名古屋市港区◯◯◯　◯-◯-◯</li>
+        </ul>
+        <input id="address" type="textbox" value="愛知県名古屋市港区◯◯◯　◯-◯-◯" >
+        <input type="button" value="表示" onclick="codeAddress()">
+
+<div id='map' ></div>
+
+<style >
+#map {
+  height: 300px;
+  width: 300px;
+  text-align:center;
+  margin:0 auto;
+}
+</style>
+
+<script >
+let map
+let geocoder
+// 下の1行を追加 
+const display = document.getElementById('display')
+
+function initMap(){
+  geocoder = new google.maps.Geocoder()
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 40.7828, lng:-73.9653},
+    zoom: 12,
+  });
+
+  marker = new google.maps.Marker({
+    position:  {lat: 40.7828, lng:-73.9653},
+    map: map
+  });
+}
+
+function codeAddress(){
+  let inputAddress = document.getElementById('address').value;
+
+  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+    if (status == 'OK') {
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+      // 下の1行を追加 
+      display.textContent = "検索結果：" + results[ 0 ].geometry.location
+    } else {
+      alert('該当する結果がありませんでした：' + status);
+    }
+  });   
+}
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
+</script>
+
+
+
+
+      </div>
+    </div>

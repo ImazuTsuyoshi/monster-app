@@ -3,16 +3,17 @@
     <%= link_to "◯◯BaseballClub", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "トップ画面", root_path %></li>&emsp;
+        <li><%= link_to "HOME", root_path %></li>&emsp;
         <% if user_signed_in? %>
-          <li><%= link_to "メンバー一覧", users_path %></li>&emsp;
+          <li><%= link_to "メンバー紹介", users_path %></li>&emsp;
           <li><%= link_to '日程とお知らせ', boards_path %></li>&emsp;
           <li><%= link_to "プロフィール変更", edit_user_registration_path %></li>&emsp;
           <li>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
           </li>
         <% else %>
-          &emsp;<%= link_to "応募フォーム", new_user_registration_path %>
+          <li><%= link_to "メンバー募集情報", users_index_member_path %></li>&emsp;
+          <li><%= link_to "お問い合わせ", users_index_contact_path %></li>&emsp;
           &emsp;<li><%= link_to "ログイン", new_user_session_path %></li>
         <% end %>
       </ul>

@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
   private
 
     def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :name, :phone, :history, :address, :latitude, :longitude, :self_introduction])
-      devise_parameter_sanitizer.permit(:account_update, keys: [:name, :email, :phone, :history, :address,:latitude, :longitude, :self_introduction])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :name,  :history, :self_introduction])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:name, :email,  :history, :self_introduction])
     end
 
     # paramsハッシュからユーザーを取得します。

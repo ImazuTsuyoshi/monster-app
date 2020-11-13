@@ -1,0 +1,48 @@
+<div class="main ">
+  <div class="row">
+
+    <div class="col-md-12"> 
+      <div class="center " id="top-main">
+        <h1 id="top-main-title">◯◯BaseballClub</h1>
+        <h3><p>草野球メンバー募集中です!</p></h3>
+<ul>
+  <h5><li>①活動エリア</li></h5>
+  <p>・名古屋市内・刈谷市内のグラウンドで行なっています。</p>
+  <h5><li>&emsp;&emsp;②活動頻度・日時<br></h5>
+  &emsp;・第1・3 日曜日　9:00 〜 15:00 のグラウンドが取れた所<br>
+  &emsp;・第2・4 土曜日　19:00 〜 21:00 ナイター</li>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<br>
+
+  <br><li>
+    <h5>&emsp;&emsp;&emsp;③募集条件について<br></h5>
+    &emsp;・野球経験・性別・国籍は不問です。&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<br>
+    &emsp;&emsp;・野球が好きな方、やってみたい方、上手くなりたい方<br>
+    ↑これが一番大切です。笑
+  </li><br>
+
+  <li>
+  <h5>④活動費・必要な物について<br></h5>
+  ・年会費はもらっていません。ズボンや靴下は<br>ユニフォームは自前でお願いしています。
+ </li> 
+
+</ul> 
+        <p>※基本的にこのスケジュールで活動しています</p> 
+        <% unless user_signed_in? %>
+          <p>↓↓応募フォームはこちらへ↓↓</p>
+          <p><%= link_to "応募フォーム", new_user_registration_path, class: "btn  btn-success" %></p>
+          <div style="margin-top: 10px;">
+            <p>↓↓すでにメンバーの方はこちらへ!↓↓</p>
+            <%= link_to "ログイン", new_user_session_path, class: "btn btn-danger" %>
+          </div>
+        <% end %>
+        <% if user_signed_in? %>
+          <p>↓↓ログアウトはこちら!↓↓</p>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

@@ -1,11 +1,17 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :destroy]
-  before_action :authenticate_user!, only: [ :index, :destroy]
+  before_action :authenticate_user!, only: [ :destroy]
   before_action :admin_user, only: [:destroy]
 
   def index
     @users = User.paginate(page: params[:page])
   end
+
+  def index_member
+  end 
+  
+  def index_contact
+  end  
 
   def show
   end

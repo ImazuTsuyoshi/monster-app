@@ -9,7 +9,7 @@ ja:
         phone: 電話番号
         history: 野球歴
         address: 住所
-        self_introduction: 自己紹介
+        self_introduction: 自己紹介、自己PR
         password_confirmation: パスワード（確認）
         remember_me: 次回から自動的にログイン
         current_password: 現在のパスワード
