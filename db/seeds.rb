@@ -7,23 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create!(name: "今津剛",
-  email: "tsuyoshi@email.com",
+  email: "sample@email.com",
   password: "password",
   password_confirmation: "password",
   admin: true,
-  phone: "09011112222",
   history: "10年",
-  address: "愛知県名古屋市港区名港1-◯-◯",
   self_introduction: "小学校３年から高校の途中まで野球をやってました。ずっとピッチャーやっていて肩を壊してやめてしまいました。希望のボジションはファーストで希望の背番号は5です。よろしくお願いします。"
   )
 
   User.create!(name: "sampleuser",
-    email: "tsuyoshia@email.com",
+    email: "sample1@email.com",
     password: "password",
     password_confirmation: "password",
-    phone: "08011112222",
     history: "0年",
-    address: "愛知県名古屋市港区名港1-◯-◯",
     self_introduction: "未経験ですが野球を見るのが好きでやってみたく応募させていただきました。希望のボジションはライトで希望の背番号は9です。よろしくお願いします。"
     )  
 
