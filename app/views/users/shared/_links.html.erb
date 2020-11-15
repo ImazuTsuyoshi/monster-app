@@ -4,8 +4,8 @@
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <p>↓↓応募フォームはこちらへ↓↓</p>
-  <%= link_to "応募フォームへ", new_registration_path(resource_name), class: "btn btn-success" %><br />
+  <p>↓↓新規メンバー入会、応募はこちらへ↓↓</p>
+  <%= link_to "新規登録", new_registration_path(resource_name), class: "btn btn-success" %><br />
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>

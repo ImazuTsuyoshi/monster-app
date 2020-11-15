@@ -27,8 +27,8 @@
 </ul> 
         <p>※基本的にこのスケジュールで活動しています</p> 
         <% unless user_signed_in? %>
-          <p>↓↓応募フォームはこちらへ↓↓</p>
-          <p><%= link_to "応募フォーム", new_user_registration_path, class: "btn  btn-success" %></p>
+          <p>↓↓新規メンバー入会、応募はこちらへ↓↓</p>
+          <p><%= link_to "新規登録", new_user_registration_path, class: "btn  btn-success" %></p>
           <div style="margin-top: 10px;">
             <p>↓↓すでにメンバーの方はこちらへ!↓↓</p>
             <%= link_to "ログイン", new_user_session_path, class: "btn btn-danger" %>

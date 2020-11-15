@@ -5,7 +5,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "HOME", root_path %></li>&emsp;
         <% if user_signed_in? %>
-          <li><%= link_to "メンバー紹介", users_path %></li>&emsp;
+          <li><%= link_to "メンバー一覧", users_path %></li>&emsp;
           <li><%= link_to '日程とお知らせ', boards_path %></li>&emsp;
           <li><%= link_to "プロフィール変更", edit_user_registration_path %></li>&emsp;
           <li>

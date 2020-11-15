@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :destroy]
-  before_action :authenticate_user!, only: [ :destroy]
+  before_action :authenticate_user!, only: [:index, :destroy]
   before_action :admin_user, only: [:destroy]
 
   def index
@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end 
   
   def index_contact
-  end  
+  end
 
   def show
   end
