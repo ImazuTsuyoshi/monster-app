@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_19_155350) do
+ActiveRecord::Schema.define(version: 2020_11_20_163224) do
 
   create_table "board_tag_relations", force: :cascade do |t|
     t.integer "board_id", null: false
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 2020_11_19_155350) do
     t.string "address"
     t.float "latitude"
     t.float "longitude"
-    t.integer "user_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -63,6 +62,10 @@ ActiveRecord::Schema.define(version: 2020_11_19_155350) do
     t.float "latitude"
     t.float "longitude"
     t.string "self_introduction"
+    t.string "phone"
+    t.string "age"
+    t.string "gender"
+    t.string "residence"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

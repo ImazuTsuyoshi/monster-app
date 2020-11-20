@@ -13,9 +13,25 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.text_field :age, autofocus: true, autocomplete: "name", placeholder: "年齢入力" %>
+  </div>
 
- 
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address, autofocus: true, autocomplete: "name", placeholder: "住所入力" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.text_field :gender, autofocus: true, autocomplete: "name", placeholder: "住所入力" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone, autofocus: true, autocomplete: "name", placeholder: "電話番号入力" %>
+  </div>
 
   <div class="field">
     <%= f.label :history %><br />

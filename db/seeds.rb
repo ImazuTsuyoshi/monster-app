@@ -8,6 +8,10 @@
 
 User.create!(name: "今津剛",
   email: "sample@email.com",
+  age: "29",
+  gender: "男",
+  phone: "09011112222",
+  residence: "愛知県名古屋市◯◯区◯◯◯ ◯-◯-◯",
   password: "password",
   password_confirmation: "password",
   admin: true,
@@ -17,6 +21,10 @@ User.create!(name: "今津剛",
 
   User.create!(name: "sampleuser",
     email: "sample1@email.com",
+    age: "25",
+    gender: "女",
+    phone: "09011112222",
+    residence: "愛知県名古屋市◯◯区◯◯◯ ◯-◯-◯",
     password: "password",
     password_confirmation: "password",
     history: "0年",
@@ -27,5 +35,6 @@ Tag.create([
   { name: '練習の日程' },
   { name: '練習試合の日程' },
   { name: '大会試合の日程' },
+  { name: '試合結果' },
   { name: 'お知らせ' }
 ])

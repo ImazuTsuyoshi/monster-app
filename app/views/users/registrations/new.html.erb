@@ -1,9 +1,9 @@
 <div class="sessions_new">
-<h2>新規登録</h2>※全て入力必須でお願いいたします。
-<br>※ご希望のポシション、背番号がある人は遠慮なく自己紹介欄にお書き下さい。
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
+  <h2>新規登録</h2>※全て入力必須でお願いいたします。
+  <br>※ご希望のポシション、背番号がある人は遠慮なく自己紹介欄にお書き下さい。
 
   <div class="field">
     <br><%= f.label :name %><br />
@@ -13,6 +13,26 @@
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" , placeholder: "メールアドレス入力" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.text_field :age, autofocus: true, autocomplete: "name", placeholder: "年齢入力" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address, autofocus: true, autocomplete: "name", placeholder: "住所入力" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.text_field :gender, autofocus: true, autocomplete: "name", placeholder: "住所入力" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone, autofocus: true, autocomplete: "name", placeholder: "電話番号入力" %>
   </div>
 
   <div class="field">

@@ -12,7 +12,9 @@
                      }
       %>
     <% end %>
-    <a href="/boards/new" class="btn btn-outline-success">新規作成</a>
+    <% if current_user.admin? %>
+      <a href="/boards/new" class="btn btn-outline-success">新規作成</a>
+    <% end %> 
     
   </div>
 </div>
@@ -37,7 +39,7 @@
         <td><%= board.updated_at.to_s(:datetime_jp) %></td>
         <td><%= link_to '詳細', board, class: "btn btn-primary " %></td>
         <td>
-          <% if user_signed_in? && board.id == current_user.id %>
+          <% if current_user.admin? %>
             <%= link_to '削除', board, class: 'btn btn-outline-dark', method: :delete,  data: { confirm: '削除してよろしいですか？' }, class: "btn btn-danger" %>
           <% end %> 
         </td>
