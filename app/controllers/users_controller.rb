@@ -13,6 +13,9 @@ class UsersController < ApplicationController
   def index_contact
   end
 
+  def index_map
+  end
+
   def show
   end
 

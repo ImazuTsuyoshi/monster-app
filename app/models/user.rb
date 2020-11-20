@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
   # Include default devise modules. Others available are:
@@ -14,5 +15,6 @@ class User < ApplicationRecord
 
 
   validates :history, presence: true 
-  validates :self_introduction, presence: true        
+  validates :self_introduction, presence: true      
+  
 end

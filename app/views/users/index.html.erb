@@ -1,13 +1,13 @@
 <% provide(:title, 'All Users') %>
-<h1>メンバー一覧</h1>
+<h1>メンバー紹介</h1>
 <div class=" align-items-center">
 </div>
 
 
-<div class="col-md-12 col-md-offset-1">
+<div class="col-md-12 ">
   <%= will_paginate %>
-  <table class="table table-condensed table-hover" id="table-users">
-    <thead >
+  <table class="table table-hover" id="table-users">
+    <thead class="thead-light">
       <tr>
         <th><%= User.human_attribute_name :name %></th>
         <th class="center"><%= User.human_attribute_name :history %></th>

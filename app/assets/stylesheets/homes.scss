@@ -8,10 +8,11 @@ li {
 .top-main {
   color: white;
   background-color: #3ecd85;
-  background-repeat: no-repeat;
-  background-position: center 50%;
-  background-size: cover;
   background-image: url("/baseball.png");
+  background-position:center bottom; 
+  background-size:contain;                               /* 画像のサイズを指定    */
+    width:104%;                                            /* 横幅のサイズを指定    */
+    height:860px; 
 }
 
 .center {

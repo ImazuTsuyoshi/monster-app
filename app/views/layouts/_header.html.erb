@@ -1,20 +1,20 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <%= link_to "◯◯BaseballClub", root_path, id: "logo" %>
-    <nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
+  <div class="container ">
+    <nav >
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "HOME", root_path %></li>&emsp;
+        <li class="nav-item active"><%= link_to "HOME", root_path, class: "nav-link"  %></li>&emsp;
         <% if user_signed_in? %>
-          <li><%= link_to "メンバー一覧", users_path %></li>&emsp;
-          <li><%= link_to '日程とお知らせ', boards_path %></li>&emsp;
-          <li><%= link_to "プロフィール変更", edit_user_registration_path %></li>&emsp;
-          <li>
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <li class="nav-item active"><%= link_to "メンバー紹介", users_path, class: "nav-link" %></li>&emsp;
+          <li class="nav-item active"><%= link_to '日程とお知らせ', boards_path, class: "nav-link"  %></li>&emsp;
+          <li class="nav-item active"><%= link_to "活動場所", users_index_map_path, class: "nav-link"  %></li>&emsp;
+          <li class="nav-item active"><%= link_to "プロフィール変更", edit_user_registration_path, class: "nav-link"  %></li>&emsp;
+          <li class="nav-item active">
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link"  %>
           </li>
         <% else %>
-          <li><%= link_to "メンバー募集情報", users_index_member_path %></li>&emsp;
-          <li><%= link_to "お問い合わせ", users_index_contact_path %></li>&emsp;
-          &emsp;<li><%= link_to "ログイン", new_user_session_path %></li>
+          <li class="nav-item active"><%= link_to "メンバー募集情報", users_index_member_path, class: "nav-link"  %></li>&emsp;
+          <li class="nav-item active"><%= link_to "活動場所", users_index_map_path, class: "nav-link"  %></li>&emsp;
+          &emsp;<li class="nav-item active"><%= link_to "ログイン", new_user_session_path, class: "nav-link"  %></li>
         <% end %>
       </ul>
     </nav>

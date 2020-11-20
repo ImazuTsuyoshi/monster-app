@@ -13,12 +13,12 @@
       %>
     <% end %>
     <a href="/boards/new" class="btn btn-outline-success">新規作成</a>
-    <%= link_to '地図検索', current_user, class: "btn btn-outline-info" %><br>※地図検索は練習場所、試合場所が分からない時にお使いください。
+    
   </div>
 </div>
 
 <table class="table table-hover boards__table">
-  <thead class="thead-dark">
+  <thead class="thead-light">
     <tr>
       <th>タイトル</th>
       <th>作成者</th>
@@ -37,9 +37,9 @@
         <td><%= board.updated_at.to_s(:datetime_jp) %></td>
         <td><%= link_to '詳細', board, class: "btn btn-primary " %></td>
         <td>
-          <% if current_user.admin? %>
+          <% if user_signed_in? && board.id == current_user.id %>
             <%= link_to '削除', board, class: 'btn btn-outline-dark', method: :delete,  data: { confirm: '削除してよろしいですか？' }, class: "btn btn-danger" %>
-          <% end %>  
+          <% end %> 
         </td>
       </tr>
     <% end %>

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'homes#top'
   get 'users/index_member' , to: 'users#index_member'
   get 'users/index_contact' , to: 'users#index_contact'
+  get 'users/index_map' , to: 'users#index_map'
 
   resources :boards
   resources :comments, only: %i[create destroy]

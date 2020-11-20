@@ -4,6 +4,11 @@
 
     <div class="col-md-7"> 
       <div class="center " id="top-main">
+        <p>　</p>
+        <p>　</p>
+        <p>　</p>
+        <p>　</p>
+        
         <h1 id="top-main-title">◯◯BaseballClub</h1>
         <% unless user_signed_in? %>
           <h3><p>草野球メンバー募集中です!</p></h3> 
@@ -19,6 +24,14 @@
           <p>↓↓ログアウトはこちら!↓↓</p>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
         <% end %>
+        <div style="margin-top: 10px;">
+            <p>↓↓お問い合わせはこちらへ!↓↓</p>
+            <ul>
+              <li>管理者名:　今津剛　　　　　　　　　　　　</li>
+              <li>電話番号:　09011112222　　　　　　　　　</li>
+              <li>住所: 愛知県名古屋市◯◯区◯◯◯　◯-◯-◯</li>
+            </ul>
+        </div>
 
       </div>
     </div>
