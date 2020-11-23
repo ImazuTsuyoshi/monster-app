@@ -13,9 +13,8 @@
       %>
     <% end %>
     <% if current_user.admin? %>
-      <a href="/boards/new" class="btn btn-outline-success">新規作成</a>
-    <% end %> 
-    
+      <a href="/boards/new" class="btn btn-outline-dark">新規作成</a>
+    <% end %>
   </div>
 </div>
 
@@ -23,7 +22,6 @@
   <thead class="thead-light">
     <tr>
       <th>タイトル</th>
-      <th>作成者</th>
       <th>作成日時</th>
       <th>更新日時</th>
       <th></th>
@@ -34,14 +32,13 @@
     <% @boards.each do |board| %>
       <tr>
         <td><%= board.title %></td>
-        <td><%= board.name %></td>
         <td><%= board.created_at.to_s(:datetime_jp) %></td>
         <td><%= board.updated_at.to_s(:datetime_jp) %></td>
         <td><%= link_to '詳細', board, class: "btn btn-primary " %></td>
         <td>
           <% if current_user.admin? %>
             <%= link_to '削除', board, class: 'btn btn-outline-dark', method: :delete,  data: { confirm: '削除してよろしいですか？' }, class: "btn btn-danger" %>
-          <% end %> 
+           <% end %> 
         </td>
       </tr>
     <% end %>

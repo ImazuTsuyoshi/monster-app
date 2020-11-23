@@ -4,9 +4,7 @@
     <span><%= comment.name %></span>
     <span><%= comment.created_at.to_s(:datetime_jp) %></span>
     <span>
-      <% if user_signed_in? && board.id == comment.board_id ==  %>
-        <%= link_to '削除', comment, method: :delete, data: { confirm: '削除してよろしいですか？' } %>
-      <% end %>  
+        <%= link_to '削除', comment, method: :delete, data: { confirm: '削除してよろしいですか？' } %> 
     </span>
   </div>
 </div>
