@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'users/index_contact' , to: 'users#index_contact'
   get 'users/index_map' , to: 'users#index_map'
   get 'users/index_information' , to: 'users#index_information'
+  get 'users/index_run' , to: 'users#index_run'
 
 
   resources :boards
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   }
 
   resources :users 
+    
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

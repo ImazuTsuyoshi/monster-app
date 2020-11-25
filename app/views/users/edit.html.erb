@@ -1,0 +1,34 @@
+
+<h1>個人データ更新</h1>
+<p>A: すごい&emsp;B: 普通&emsp;C: いまいち</P>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with(model: @user, local: true) do |f| %>
+
+      <%= f.label :name, class: "label-user--edit" %>
+     <p><%= @user.name %></p>
+
+
+      <%= f.label :run, class: "label-user--edit" %>
+      <%= f.select :run, ['A', 'B', 'C'], {include_blank: '選択してください'}, class: "form-control" %>
+
+      <%= f.label :rb, class: "label-user--edit" %>
+      <%= f.select :rb, ['A', 'B', 'C'], {include_blank: '選択してください'}, class: "form-control" %>
+
+      <%= f.label :singl, class: "label-user--edit" %>
+      <%= f.select :singl, ['A', 'B', 'C'], {include_blank: '選択してください'}, class: "form-control" %>
+
+      <%= f.label :two,  class: "label-user--edit" %>
+      <%= f.select :two, ['A', 'B', 'C'], {include_blank: '選択してください'}, class: "form-control" %>
+
+      <%= f.label :three, class: "label-user--edit" %>
+      <%= f.select :three, ['A', 'B', 'C'], {include_blank: '選択してください'}, class: "form-control" %>
+
+      <%= f.label :characteristic, class: "label-user--edit"  %><br />
+      <%= f.text_area :characteristic, class: "form-control" %>
+
+      <%= f.submit "更新", class: "btn btn-primary btn-block btn-user--edit" %>
+    <% end %>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :destroy]
+  before_action :set_user, only: [:show, :edit, :destroy]
   before_action :authenticate_user!, only: [:index, :index_information, :destroy]
   before_action :admin_user, only: [:destroy]
 
@@ -16,6 +16,10 @@ class UsersController < ApplicationController
   def index_map
   end
 
+  def index_run
+    @users = User.all
+  end
+
   def index_information
     @users = User.paginate(page: params[:page])
   end
@@ -29,11 +33,22 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      flash[:success] = "ユーザー情報を更新しました。"
+      redirect_to users_index_run_url
+    else
+      render :edit      
+    end
+  end
+
+
   private
 
-    def zipedit
-      params.require(:user).permit(:postcode, :prefecture_name, :address_city, :address_street, :address_building)
-    end
+  def user_params
+    params.require(:user).permit(:run, :rb, :singl, :two, :three, :characteristic)
+  end
     
 
 end

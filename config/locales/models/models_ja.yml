@@ -2,7 +2,7 @@ ja:
   activerecord:
     attributes:
       user:
-        name: お名前
+        name: 名前
         uniform: ご希望の背番号
         position: ご希望のボジション
         password: パスワード
@@ -16,6 +16,13 @@ ja:
         password_confirmation: パスワード（確認）
         remember_me: 次回から自動的にログイン
         current_password: 現在のパスワード
+        run: パワー
+        rb: 走力
+        singl: 肩力
+        two: 守備力
+        three: 捕球
+        characteristic: 特徴
+
       board:
         name: 名前
         title: タイトル

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_20_163224) do
+ActiveRecord::Schema.define(version: 2020_11_24_045326) do
 
   create_table "board_tag_relations", force: :cascade do |t|
     t.integer "board_id", null: false
@@ -66,6 +66,13 @@ ActiveRecord::Schema.define(version: 2020_11_20_163224) do
     t.string "age"
     t.string "gender"
     t.string "residence"
+    t.date "worked_on"
+    t.string "run"
+    t.string "rb"
+    t.string "singl"
+    t.string "two"
+    t.string "three"
+    t.string "characteristic"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
