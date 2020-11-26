@@ -19,6 +19,7 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.name %></td>
+        <td><%= image_tag user.image.url if user.image? %></td>
         <td><%= user.history %></td>
        <td><%= user.self_introduction %></td>
         <td>
