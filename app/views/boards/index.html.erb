@@ -1,9 +1,8 @@
-
 <div class="d-flex align-items-center">
   <h1>日程とお知らせ</h1>
   <div class="ml-auto boards__linkBox">
     <%= form_with url: boards_path, method: :get, class: 'boards__searchForm' do %>
-      <%= select_tag :tag_id,
+    <%= select_tag :tag_id,
                      options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
                      {
                        prompt: 'タグで絞り込み',
@@ -13,7 +12,7 @@
       %>
     <% end %>
     <% if current_user.admin? %>
-      <a href="/boards/new" class="btn btn-outline-dark">新規作成</a>
+    <a href="/boards/new" class="btn btn-outline-success">新規作成</a>
     <% end %>
   </div>
 </div>
@@ -30,17 +29,17 @@
   </thead>
   <tbody>
     <% @boards.each do |board| %>
-      <tr>
-        <td><%= board.title %></td>
-        <td><%= board.created_at.to_s(:datetime_jp) %></td>
-        <td><%= board.updated_at.to_s(:datetime_jp) %></td>
-        <td><%= link_to '詳細', board, class: "btn btn-primary " %></td>
-        <td>
-          <% if current_user.admin? %>
-            <%= link_to '削除', board, class: 'btn btn-outline-dark', method: :delete,  data: { confirm: '削除してよろしいですか？' }, class: "btn btn-danger" %>
-           <% end %> 
-        </td>
-      </tr>
+    <tr>
+      <td><%= board.title %></td>
+      <td><%= board.created_at.to_s(:datetime_jp) %></td>
+      <td><%= board.updated_at.to_s(:datetime_jp) %></td>
+      <td><%= link_to '詳細', board, class: "btn btn-primary " %></td>
+      <td>
+        <% if current_user.admin? %>
+        <%= link_to '削除', board, class: 'btn btn-outline-dark', method: :delete,  data: { confirm: '削除してよろしいですか？' }, class: "btn btn-danger" %>
+        <% end %>
+      </td>
+    </tr>
     <% end %>
   </tbody>
 </table>
