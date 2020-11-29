@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create!(name: "今津剛",
-  email: "sample@email.com",
+  email: "yahoo@email.com",
   age: "29歳",
   gender: "男",
   pho: "09011112222",
@@ -20,7 +20,7 @@ User.create!(name: "今津剛",
   )
 
   User.create!(name: "sampleuser",
-    email: "sample1@email.com",
+    email: "yahooZ@email.com",
     age: "25歳",
     gender: "女",
     pho: "09022223333",
@@ -32,7 +32,7 @@ User.create!(name: "今津剛",
     )  
 
     User.create!(name: "sampleuserA",
-      email: "sample2@email.com",
+      email: "yahooA@email.com",
       age: "26歳",
       gender: "女",
       pho: "09033334444",
@@ -44,7 +44,7 @@ User.create!(name: "今津剛",
       )  
       
       User.create!(name: "samplB",
-        email: "sample3@email.com",
+        email: "yahooB@email.com",
         age: "27歳",
         gender: "男",
         pho: "09055556666",
@@ -56,7 +56,7 @@ User.create!(name: "今津剛",
         )    
 
         User.create!(name: "samplC",
-          email: "sample4@email.com",
+          email: "yahooC@email.com",
           age: "28歳",
           gender: "男",
           pho: "09077778888",
@@ -68,7 +68,7 @@ User.create!(name: "今津剛",
           )  
           
           User.create!(name: "samplD",
-            email: "sample5@email.com",
+            email: "yahooD@email.com",
             age: "29歳",
             gender: "女",
             pho: "0809991111",
@@ -80,7 +80,7 @@ User.create!(name: "今津剛",
             )  
 
             User.create!(name: "samplE",
-              email: "sample6@email.com",
+              email: "yahooE@email.com",
               age: "30歳",
               gender: "男",
               pho: "08011112222",
@@ -92,7 +92,7 @@ User.create!(name: "今津剛",
               )  
 
               User.create!(name: "samplF",
-                email: "sample7@email.com",
+                email: "yahooF@email.com",
                 age: "30歳",
                 gender: "男",
                 pho: "08022223333",
@@ -104,7 +104,7 @@ User.create!(name: "今津剛",
                 )  
 
                 User.create!(name: "samplG",
-                  email: "sample8@email.com",
+                  email: "yahooG@email.com",
                   age: "31歳",
                   gender: "男",
                   pho: "08033334444",
@@ -116,7 +116,7 @@ User.create!(name: "今津剛",
                   )  
 
                   User.create!(name: "samplH",
-                    email: "sample9@email.com",
+                    email: "yahooH@email.com",
                     age: "32歳",
                     gender: "男",
                     pho: "08055556666",
@@ -128,7 +128,7 @@ User.create!(name: "今津剛",
                     )  
 
                     User.create!(name: "samplI",
-                      email: "sample10@email.com",
+                      email: "yahooI@email.com",
                       age: "33歳",
                       gender: "男",
                       pho: "08077778888",
@@ -140,7 +140,7 @@ User.create!(name: "今津剛",
                       ) 
                       
                       User.create!(name: "samplJ",
-                        email: "sample11@email.com",
+                        email: "yahooJ@email.com",
                         age: "34歳",
                         gender: "男",
                         pho: "08099991111",
