@@ -12,7 +12,7 @@
         <th class="center"><%= User.human_attribute_name :name %></th>
         <th class="center"><%= User.human_attribute_name :age %></th>
         <th class="center"><%= User.human_attribute_name :gender %></th>
-        <th class="center"><%= User.human_attribute_name :phone %></th>
+        <th class="center"><%= User.human_attribute_name :pho %></th>
         <th class="center"><%= User.human_attribute_name :residence %></th>
         <th></th>
       </tr>
@@ -23,7 +23,7 @@
       <td class="center"><%= user.name %></td>
       <td class="center"><%= user.age %></td>
       <td class="center"><%= user.gender %></td>
-      <td class="center"><%= user.phone %></td>
+      <td class="center"><%= user.pho %></td>
       <td class="center"><%= user.residence %></td>
       <td>
         <% if current_user.admin? %>

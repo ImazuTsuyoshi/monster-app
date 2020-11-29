@@ -18,7 +18,7 @@ class User < ApplicationRecord
 
   validates :history, presence: true 
   validates :self_introduction, presence: true   
-  validates :phone, presence: true    
+  validates :pho, presence: true    
   validates :age, presence: true   
   validates :gender, presence: true    
   validates :residence, presence: true    

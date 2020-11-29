@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2020_11_25_215502) do
     t.float "latitude"
     t.float "longitude"
     t.string "self_introduction"
-    t.string "phone"
+    t.string "pho"
     t.string "age"
     t.string "gender"
     t.string "residence"
