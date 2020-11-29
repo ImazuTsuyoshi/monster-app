@@ -31,7 +31,7 @@ User.create!(name: "今津剛",
     self_introduction: "未経験ですが野球を見るのが好きでやってみたく応募させていただきました。希望のボジションはライトで希望の背番号は9です。よろしくお願いします。"
     )  
 
-    User.create!(name: "samplA",
+    User.create!(name: "sampleuserA",
       email: "sample2@email.com",
       age: "26歳",
       gender: "女",
