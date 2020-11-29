@@ -22,6 +22,7 @@ ja:
         two: 守備力
         three: 捕球
         characteristic: 特徴
+        image: プロフィール写真
 
       board:
         name: 名前

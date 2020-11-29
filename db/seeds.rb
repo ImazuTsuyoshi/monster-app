@@ -8,7 +8,7 @@
 
 User.create!(name: "今津剛",
   email: "sample@email.com",
-  age: "29",
+  age: "29歳",
   gender: "男",
   phone: "09011112222",
   residence: "愛知県名古屋市◯◯区◯◯◯ ◯-◯-◯",
@@ -21,15 +21,137 @@ User.create!(name: "今津剛",
 
   User.create!(name: "sampleuser",
     email: "sample1@email.com",
-    age: "25",
+    age: "25歳",
     gender: "女",
-    phone: "09011112222",
+    phone: "09022223333",
     residence: "愛知県名古屋市◯◯区◯◯◯ ◯-◯-◯",
     password: "password",
     password_confirmation: "password",
-    history: "0年",
+    history: "6年",
     self_introduction: "未経験ですが野球を見るのが好きでやってみたく応募させていただきました。希望のボジションはライトで希望の背番号は9です。よろしくお願いします。"
     )  
+
+    User.create!(name: "sampleuser",
+      email: "sample2@email.com",
+      age: "26歳",
+      gender: "女",
+      phone: "09033334444",
+      residence: "愛知県名古屋市◯◯区◯◯◯ ◯-◯-◯",
+      password: "password",
+      password_confirmation: "password",
+      history: "8年",
+      self_introduction: "よろしくお願いします。"
+      )  
+      
+      User.create!(name: "sampleuser",
+        email: "sample3@email.com",
+        age: "27歳",
+        gender: "男",
+        phone: "09055556666",
+        residence: "愛知県名古屋市◯◯区◯◯◯ ◯-◯-◯",
+        password: "password",
+        password_confirmation: "password",
+        history: "9年",
+        self_introduction: "よろしくお願いします。"
+        )    
+
+        User.create!(name: "sampleuser",
+          email: "sample4@email.com",
+          age: "28歳",
+          gender: "男",
+          phone: "09077778888",
+          residence: "愛知県名古屋市◯◯区◯◯◯ ◯-◯-◯",
+          password: "password",
+          password_confirmation: "password",
+          history: "6年",
+          self_introduction: "よろしくお願いします。"
+          )  
+          
+          User.create!(name: "sampleuser",
+            email: "sample5@email.com",
+            age: "29歳",
+            gender: "女",
+            phone: "0809991111",
+            residence: "愛知県名古屋市◯◯区◯◯◯ ◯-◯-◯",
+            password: "password",
+            password_confirmation: "password",
+            history: "8年",
+            self_introduction: "よろしくお願いします。"
+            )  
+
+            User.create!(name: "sampleuser",
+              email: "sample6@email.com",
+              age: "30歳",
+              gender: "男",
+              phone: "08011112222",
+              residence: "愛知県名古屋市◯◯区◯◯◯ ◯-◯-◯",
+              password: "password",
+              password_confirmation: "password",
+              history: "7年",
+              self_introduction: "よろしくお願いします。"
+              )  
+
+              User.create!(name: "sampleuser",
+                email: "sample7@email.com",
+                age: "30歳",
+                gender: "男",
+                phone: "08022223333",
+                residence: "愛知県名古屋市◯◯区◯◯◯ ◯-◯-◯",
+                password: "password",
+                password_confirmation: "password",
+                history: "6年",
+                self_introduction: "よろしくお願いします。"
+                )  
+
+                User.create!(name: "sampleuser",
+                  email: "sample8@email.com",
+                  age: "31歳",
+                  gender: "男",
+                  phone: "08033334444",
+                  residence: "愛知県名古屋市◯◯区◯◯◯ ◯-◯-◯",
+                  password: "password",
+                  password_confirmation: "password",
+                  history: "7年",
+                  self_introduction: "よろしくお願いします。"
+                  )  
+
+                  User.create!(name: "sampleuser",
+                    email: "sample9@email.com",
+                    age: "32歳",
+                    gender: "男",
+                    phone: "08055556666",
+                    residence: "愛知県名古屋市◯◯区◯◯◯ ◯-◯-◯",
+                    password: "password",
+                    password_confirmation: "password",
+                    history: "8年",
+                    self_introduction: "よろしくお願いします。"
+                    )  
+
+                    User.create!(name: "sampleuser",
+                      email: "sample10@email.com",
+                      age: "33歳",
+                      gender: "男",
+                      phone: "08077778888",
+                      residence: "愛知県名古屋市◯◯区◯◯◯ ◯-◯-◯",
+                      password: "password",
+                      password_confirmation: "password",
+                      history: "9年",
+                      self_introduction: "よろしくお願いします。"
+                      ) 
+                      
+                      User.create!(name: "sampleuser",
+                        email: "sample11@email.com",
+                        age: "34歳",
+                        gender: "男",
+                        phone: "08099991111",
+                        residence: "愛知県名古屋市◯◯区◯◯◯ ◯-◯-◯",
+                        password: "password",
+                        password_confirmation: "password",
+                        history: "10年",
+                        self_introduction: "よろしくお願いします。"
+                        )   
+
+
 
 Tag.create([
   { name: '練習の日程' },

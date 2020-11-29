@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>TestApp</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+<head>
+  <title>TestApp</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_pack_tag 'application' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <!-- HTML shimがこの1行で収まる -->
-    <%= render 'layouts/shim' %>
 
-  </head>
 
-  <body>
-    <!-- headerの内容がこの1行で収まる -->
-    <%= render 'layouts/header' %>
-    <div class="container">
-      <div class= "alert alert-info">
+  <!-- HTML shimがこの1行で収まる -->
+  <%= render 'layouts/shim' %>
+
+</head>
+
+<body>
+  <!-- headerの内容がこの1行で収まる -->
+  <%= render 'layouts/header' %>
+  <div class="container">
+    <div class="alert alert-info">
       <%- flash.each do |name, msg| -%>
-        <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
       <%- end -%>
-      </div><br>
-      <%= yield %>
-    </div>
-  </body>
+    </div><br>
+    <%= yield %>
+  </div>
+</body>
+
 </html>

@@ -1,6 +1,6 @@
 <% provide(:title, 'All Users') %>
-<h1>個人データ</h1>
-<p>A: すごい&emsp;B: 普通&emsp;C: いまいち</P>
+<h1>選手データ</h1>
+<p class="user--edit">A: すごい&emsp;B: 普通&emsp;C: いまいち</P>
 
 <div class="col-md-12 col-md-offset-1">
   <table class="table table-condensed table-hover" id="table-users">
@@ -19,27 +19,27 @@
     </thead>
 
     <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.run %></td>
-        <td><%= user.rb %></td>
-        <td><%= user.singl %></td>
-        <td><%= user.two %></td>
-        <td><%= user.three %></td>
-        <td><%= user.characteristic %></td>
-        <td>
-          <% if current_user.admin? %>
-            <%= link_to '編集', edit_user_path(user), class: 'btn btn-info' %>
-          <% end %>  
-        </td>  
-        <td>
-          <% if current_user.admin? %>
-            <%= link_to "削除", user, method: :delete,
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.run %></td>
+      <td><%= user.rb %></td>
+      <td><%= user.singl %></td>
+      <td><%= user.two %></td>
+      <td><%= user.three %></td>
+      <td><%= user.characteristic %></td>
+      <td>
+        <% if current_user.admin? %>
+        <%= link_to '編集', edit_user_path(user), class: 'btn btn-info' %>
+        <% end %>
+      </td>
+      <td>
+        <% if current_user.admin? %>
+        <%= link_to "削除", user, method: :delete,
                   data: { confirm: "削除してよろしいですか？" },
                   class: "btn btn-danger" %>
-           <% end %>        
-        </td>
-      </tr>
+        <% end %>
+      </td>
+    </tr>
     <% end %>
   </table>
 </div>

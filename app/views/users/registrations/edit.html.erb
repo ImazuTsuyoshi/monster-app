@@ -1,7 +1,7 @@
 <div class="profile">
-<h2>プロフィール変更</h2>
+  <h2>プロフィール変更</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
   <div class="field">
@@ -10,12 +10,12 @@
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
   <div class="field">
-    <%= f.label :age %><br />
-    <%= f.text_field :age, autofocus: true, autocomplete: "name", placeholder: "年齢入力" %>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone, autofocus: true, autocomplete: "name", placeholder: "電話番号入力" %>
   </div>
 
   <div class="field">
@@ -24,20 +24,21 @@
   </div>
 
   <div class="field">
-    <%= f.label :gender %><br />
-    <%= f.text_field :gender, autofocus: true, autocomplete: "name", placeholder: "性別入力" %>
+    <%= f.label :age %><br />
+    <%= f.select :age, ['20歳', '21歳', '23歳', '24歳', '25歳', '26歳', '27歳', '28歳', '29歳', '30歳', '31歳', '32歳', '33歳', '34歳', '35歳', '36歳', '37歳', '38歳', '39歳', '40歳'], 
+    {include_blank: '年齢を選択してください'}, autofocus: true, autocomplete: "name", placeholder: "年齢入力" %>
   </div>
 
   <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone, autofocus: true, autocomplete: "name", placeholder: "電話番号入力" %>
+    <%= f.label :gender %><br />
+    <%= f.select :gender, ['男', '女'], {include_blank: '性別を選択してください'}, autofocus: true, autocomplete: "name", placeholder: "性別入力" %>
   </div>
 
   <div class="field">
     <%= f.label :history %><br />
-    <%= f.text_field :history, autofocus: true, autocomplete: "name", placeholder: "野球歴入力" %>
+    <%= f.select :history, ['1年', '2年', '3年', '4年', '5年', '6年', '7年', '8年', '9年', '10年', '11年', '12年', '13年', '14年', '15年', '16年', '17年', '18年', '19年', '20年'], 
+    {include_blank: '野球歴を選択してください'}, autocomplete: "name", placeholder: "野球歴入力" %>
   </div>
-
 
   <div class="field">
     <%= f.label :self_introduction %><br />
@@ -59,12 +60,14 @@
     <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "現在パスワード入力" %>
   </div>
 
-  <p><div class="actions">
+  <p>
+  <div class="actions">
     <%= f.submit "更新", class: "btn btn-primary " %>
-  </div></p>
-<% end %>
+  </div>
+  </p>
+  <% end %>
 
-<p><%= button_to "アカウントをキャンセルする", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
+  <p><%= button_to "アカウントをキャンセルする", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
 
-<%= link_to "戻る", :back %>
+  <%= link_to "戻る", :back %>
 </div>

@@ -1,12 +1,12 @@
 <div class="login">
 
-<h2>ログイン</h2>
+  <h2>ログイン</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "お名前入力" %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "名前入力" %>
   </div>
 
   <div class="field">
@@ -20,16 +20,20 @@
   </div>
 
   <% if devise_mapping.rememberable? %>
-    <p><div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div></p>
+  <p>
+  <div class="field">
+    <%= f.check_box :remember_me %>
+    <%= f.label :remember_me %>
+  </div>
+  </p>
   <% end %>
 
-  <p><div class="actions">
+  <p>
+  <div class="actions">
     <%= f.submit "ログイン" , class: "btn btn-primary " %>
-  </div></p>
-<% end %>
+  </div>
+  </p>
+  <% end %>
 
-<%= render "users/shared/links" %>
+  <%= render "users/shared/links" %>
 </div>

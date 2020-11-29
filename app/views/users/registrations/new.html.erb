@@ -1,39 +1,18 @@
 <div class="sessions_new">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
-  <h2>新規登録</h2>※全て入力必須でお願いいたします。
+  <h2>新規登録</h2>※プロフィール写真以外は全て入力必須でお願いいたします。
   <br>※ご希望のポシション、背番号がある人は遠慮なく自己紹介欄にお書き下さい。
 
   <div class="field">
     <br><%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "お名前入力" %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "名前入力" %>
   </div>
-
-  <div class="field">
-    <br><%= f.label :image %><br />
-    <%= f.file_field :image, autofocus: true, autocomplete: "name", placeholder: "お名前入力" %>
-  </div>
-
 
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" , placeholder: "メールアドレス入力" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :age %><br />
-    <%= f.text_field :age, autofocus: true, autocomplete: "name", placeholder: "年齢入力" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :residence %><br />
-    <%= f.text_field :residence, autofocus: true, autocomplete: "name", placeholder: "住所入力" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :gender %><br />
-    <%= f.text_field :gender, autofocus: true, autocomplete: "name", placeholder: "性別入力" %>
   </div>
 
   <div class="field">
@@ -42,12 +21,29 @@
   </div>
 
   <div class="field">
-    <%= f.label :history %><br />
-    <%= f.text_field :history, autofocus: true, autocomplete: "name", placeholder: "野球歴入力" %>
+    <%= f.label :residence %><br />
+    <%= f.text_field :residence, autofocus: true, autocomplete: "name", placeholder: "住所入力" %>
   </div>
 
   <div class="field">
-    <%= f.label :self_introduction %><br>
+    <%= f.label :age %><br />
+    <%= f.select :age, ['20歳', '21歳', '23歳', '24歳', '25歳', '26歳', '27歳', '28歳', '29歳', '30歳', '31歳', '32歳', '33歳', '34歳', '35歳', '36歳', '37歳', '38歳', '39歳', '40歳'], 
+    {include_blank: '年齢を選択してください'}, autofocus: true, autocomplete: "name", placeholder: "年齢入力" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.select :gender, ['男', '女'], {include_blank: '性別を選択してください'}, autofocus: true, autocomplete: "name", placeholder: "性別入力" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :history %><br />
+    <%= f.select :history, ['1年', '2年', '3年', '4年', '5年', '6年', '7年', '8年', '9年', '10年', '11年', '12年', '13年', '14年', '15年', '16年', '17年', '18年', '19年', '20年'], 
+    {include_blank: '野球歴を選択してください'}, autocomplete: "name", placeholder: "野球歴入力" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :self_introduction %><br />
     <%= f.text_area :self_introduction, autofocus: true, autocomplete: "name" , rows: 5, placeholder: "自己紹介入力"  %>
   </div>
 
@@ -64,10 +60,12 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード確認入力" %>
   </div>
 
-  <p><div class="actions">
+  <p>
+  <div class="actions">
     <%= f.submit "送信" , class: "btn btn-primary " %>
-  </div></p>
-<% end %>
+  </div>
+  </p>
+  <% end %>
 
-<%= render "users/shared/links" %>
+  <%= render "users/shared/links" %>
 </div>
