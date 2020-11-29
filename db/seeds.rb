@@ -31,7 +31,7 @@ User.create!(name: "今津剛",
     self_introduction: "未経験ですが野球を見るのが好きでやってみたく応募させていただきました。希望のボジションはライトで希望の背番号は9です。よろしくお願いします。"
     )  
 
-    User.create!(name: "sampleuser",
+    User.create!(name: "samplA",
       email: "sample2@email.com",
       age: "26歳",
       gender: "女",
@@ -43,7 +43,7 @@ User.create!(name: "今津剛",
       self_introduction: "よろしくお願いします。"
       )  
       
-      User.create!(name: "sampleuser",
+      User.create!(name: "samplB",
         email: "sample3@email.com",
         age: "27歳",
         gender: "男",
@@ -55,7 +55,7 @@ User.create!(name: "今津剛",
         self_introduction: "よろしくお願いします。"
         )    
 
-        User.create!(name: "sampleuser",
+        User.create!(name: "samplC",
           email: "sample4@email.com",
           age: "28歳",
           gender: "男",
@@ -67,7 +67,7 @@ User.create!(name: "今津剛",
           self_introduction: "よろしくお願いします。"
           )  
           
-          User.create!(name: "sampleuser",
+          User.create!(name: "samplD",
             email: "sample5@email.com",
             age: "29歳",
             gender: "女",
@@ -79,7 +79,7 @@ User.create!(name: "今津剛",
             self_introduction: "よろしくお願いします。"
             )  
 
-            User.create!(name: "sampleuser",
+            User.create!(name: "samplE",
               email: "sample6@email.com",
               age: "30歳",
               gender: "男",
@@ -91,7 +91,7 @@ User.create!(name: "今津剛",
               self_introduction: "よろしくお願いします。"
               )  
 
-              User.create!(name: "sampleuser",
+              User.create!(name: "samplF",
                 email: "sample7@email.com",
                 age: "30歳",
                 gender: "男",
@@ -103,7 +103,7 @@ User.create!(name: "今津剛",
                 self_introduction: "よろしくお願いします。"
                 )  
 
-                User.create!(name: "sampleuser",
+                User.create!(name: "samplG",
                   email: "sample8@email.com",
                   age: "31歳",
                   gender: "男",
@@ -115,7 +115,7 @@ User.create!(name: "今津剛",
                   self_introduction: "よろしくお願いします。"
                   )  
 
-                  User.create!(name: "sampleuser",
+                  User.create!(name: "samplH",
                     email: "sample9@email.com",
                     age: "32歳",
                     gender: "男",
@@ -127,7 +127,7 @@ User.create!(name: "今津剛",
                     self_introduction: "よろしくお願いします。"
                     )  
 
-                    User.create!(name: "sampleuser",
+                    User.create!(name: "samplI",
                       email: "sample10@email.com",
                       age: "33歳",
                       gender: "男",
@@ -139,7 +139,7 @@ User.create!(name: "今津剛",
                       self_introduction: "よろしくお願いします。"
                       ) 
                       
-                      User.create!(name: "sampleuser",
+                      User.create!(name: "samplJ",
                         email: "sample11@email.com",
                         age: "34歳",
                         gender: "男",
