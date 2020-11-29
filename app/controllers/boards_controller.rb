@@ -1,6 +1,7 @@
 class BoardsController < ApplicationController
   before_action :set_target_board, only: %i[show edit update destroy]
   before_action :authenticate_user!
+  before_action :admin_user, only: [:new, :edit, :destroy]
 
   def index
     @boards = params[:tag_id].present? ? Tag.find(params[:tag_id]).boards : Board.all

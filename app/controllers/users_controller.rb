@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :destroy]
-  before_action :authenticate_user!, only: [:index, :index_information, :destroy]
-  before_action :admin_user, only: [:destroy]
+  before_action :authenticate_user!, only: [:index, :index_member, :index_run, :index_information]
+  before_action :admin_user, only: [:edit, :destroy, :index_information]
 
   def index
     @users = User.paginate(page: params[:page])
@@ -9,12 +9,6 @@ class UsersController < ApplicationController
 
   def index_member
   end 
-  
-  def index_contact
-  end
-
-  def index_map
-  end
 
   def index_run
     @users = User.all
@@ -27,6 +21,9 @@ class UsersController < ApplicationController
   def show
   end
 
+  def edit 
+  end  
+
   def destroy
     @user.destroy
     flash[:success] = "#{@user.name}のデータを削除しました。"
@@ -36,7 +33,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      flash[:success] = "ユーザー情報を更新しました。"
+      flash[:success] = "選手データを更新しました。"
       redirect_to users_index_run_url
     else
       render :edit      
