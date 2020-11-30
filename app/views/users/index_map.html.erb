@@ -10,12 +10,14 @@
 
 </ul>
 
-<p><input id="address" type="textbox">
-  <input type="button" value="検索" onclick="codeAddress()">←詳しい場所はこちらをお使いください。↓</P>
-<!-- 下の1行を追加 -->
 
 
+<input id="address" type="textbox">
+<input type="button" value="検索" onclick="codeAddress()">←詳しい場所はこちらをお使いください。↓
+
+<p>
 <div id='map'></div>
+</p>
 
 <style>
   #map {
@@ -70,5 +72,4 @@
     });
   }
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
-</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
