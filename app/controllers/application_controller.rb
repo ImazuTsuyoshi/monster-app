@@ -19,4 +19,9 @@ class ApplicationController < ActionController::Base
       redirect_to root_url unless current_user.admin?
     end
 
+    def admin_users
+      redirect_to root_url if current_user.admin?
+      flash[:danger] = "管理者は削除出来ません"
+    end
+
 end

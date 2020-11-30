@@ -69,4 +69,5 @@ end
 def after_update_path_for(resource)
   boards_url
 end
+
 end

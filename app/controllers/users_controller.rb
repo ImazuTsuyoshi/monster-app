@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :destroy]
   before_action :authenticate_user!, only: [:index, :index_member, :index_run, :index_information]
   before_action :admin_user, only: [:edit, :destroy, :index_information]
+  
 
   def index
     @users = User.paginate(page: params[:page])
@@ -46,6 +47,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:run, :rb, :singl, :two, :three, :characteristic)
   end
-    
 
 end

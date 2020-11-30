@@ -18,11 +18,13 @@
 
     <% @users.each do |user| %>
     <tr>
-      <td><%= user.name %></td>
+      <td>
+        <%= user.name %>
+      </td>
       <td><%= user.history %></td>
       <td><%= user.self_introduction %></td>
       <td>
-        <% if current_user.admin? %>
+        <% if current_user.admin?  %>
         <%= link_to "削除", user, method: :delete,
                 data: { confirm: "削除してよろしいですか？" }, class: "btn btn-danger" %>
         <% end %>
